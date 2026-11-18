@@ -1,0 +1,4 @@
+# Pinned dependencies (verified working with Python 3.10+).
+# The harness itself is stdlib-only; pytest is needed only to run the tests.
+# Install with:  pip install -r requirements.txt
+pytest==9.0.2
