@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-eval-harness"
+version = "1.0.0"
+description = "Offline LLM evaluation harness in pure stdlib Python: benchmark models and prompt templates on 48 grounded tasks (QA, maths, classification, extraction), with exact-match and token-F1 scoring, latency and cost tracking, leaderboards, regression detection and a seeded paired-bootstrap significance test."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{ name = "Murtaza Mahboob" }]
+keywords = [
+    "llm-evaluation",
+    "prompt-engineering",
+    "benchmark",
+    "leaderboard",
+    "regression-testing",
+    "llm",
+    "evaluation-harness",
+    "python",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==9.0.2"]
+
+[project.scripts]
+llmeval = "evalharness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
